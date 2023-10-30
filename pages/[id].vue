@@ -10,11 +10,8 @@ onMounted(()=>{
 })
 </script>
 <template>
-    <div>
-        {{ route.params.id }}
-    </div>
     <div v-if="story">
-        <h3>{{ story.title }}</h3>
+        <a :href="story.url"><h3>{{ story.title }}</h3></a>
 
         <ul v-for="kid in story.kids">
             <li><Comment :id="kid"></Comment>
@@ -25,3 +22,7 @@ onMounted(()=>{
         <h1>loading...</h1>
         </div>
 </template>
+
+<script>
+
+</script>

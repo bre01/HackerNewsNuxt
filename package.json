@@ -11,8 +11,13 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@unocss/nuxt": "^0.56.5",
+    "@unocss/preset-wind": "^0.56.5",
     "nuxt": "^3.8.0",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "unix-timestamp": "^1.0.3"
   }
 }

@@ -6,13 +6,12 @@ export default{
     props:['stories'],
     data(){
         return{
-            displaystories:this.stories.slice(0,10)
+            displaystories:null
 
         }
     },
     mounted(){
-        console.log(this.stories)
-        console.log(this.displaystories)
+        this.displaystories=this.stories.slice(0,10)
     },     
     }
 </script>
