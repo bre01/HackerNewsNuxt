@@ -27,10 +27,10 @@ export default {
 </script>
 <template>
     <div v-if="reply">
-    <div  style=" border-color: aquamarine ;border-style:solid ;padding:10px" v-html="reply">
+    <div  class='replay' v-html="reply">
     </div>
-    <div>
-        by {{ author }} at {{ postTime }}
+    <div id="author">
+        by {{ author }} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ postTime }}
     </div>
     </div>
     <div v-else> 
@@ -38,6 +38,22 @@ export default {
     </div>
     <br />
 </template>
-<style>
+<style scoped>
+.replay{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-color: aquamarine ;border-style:solid ;
+    border-radius: 30px; 
+    padding: 20px;
+}
+
+#author{
+    position: relative;
+    top:-20px;
+    left:21px;
+    font-family: Garamond;
+    font-size: 15px;
+    color: indianred;
+    font-style: italic;
+}
 
 </style>

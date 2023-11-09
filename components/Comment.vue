@@ -20,7 +20,7 @@ export default {
         },
     },
     computed:{
-        showTime()admin{
+        showTime(){
             return {hour:(parseInt(timestamp.now())-parseInt(this.time))/3600,min:(parseInt(timestamp.now())-parseInt(this.time))%60}
         }
     },
@@ -48,11 +48,23 @@ export default {
         <button @click="toggle" :hidden="!kids.length">show {{kids.length}} replies</button>
         <br/>
         <br/>   
-        <ol  :hidden="!showReply">
+        <ol class="grid-container" :hidden="!showReply">
 
-            <li v-for="kid in kids">
+            <li class="no-number" v-for="kid in kids">
                 <reply :id="kid"></reply>
             </li>
         </ol>
     </div>
 </template>
+<style scoped>
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-gap: 10px;
+    padding: 10px;
+    list-style: none;
+};
+.no-number{
+    list-style: none;
+}
+</style>
