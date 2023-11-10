@@ -1,0 +1,5 @@
+const Comments_vue_vue_type_style_index_0_scoped_d16836bd_lang = '#author[data-v-d16836bd]{color:#cd5c5c;font-family:Garamond;font-size:15px;font-style:italic;left:21px;position:relative;top:-20px}#comment-root[data-v-d16836bd]{grid-column:1/5;margin-left:40px}.grid-container[data-v-d16836bd]{grid-gap:10px;display:grid;grid-template-columns:1fr 1fr;list-style:none;padding:10px};.no-number[data-v-d16836bd]{list-style:none}.comment[data-v-d16836bd]{border-bottom:1px solid #f1f3f4;display:grid;grid-template-columns:repeat(5,1fr);overflow:hidden;padding-bottom:16px;position:relative}.comment-html[data-v-d16836bd]{font-family:inter}[data-v-d16836bd]:root{--font:var(--font-sans);--font-sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantrell,"Open Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";--font-serif:"Source Serif Pro","Iowan Old Style","Sitka Text",Palatino,"Book Antiqua",serif;--theme-colors:255,102,0;--line-colors:#f1f3f4}';
+export {
+  Comments_vue_vue_type_style_index_0_scoped_d16836bd_lang as default
+};
+//# sourceMappingURL=_id_-styles-2.mjs-5f365eea.js.map
