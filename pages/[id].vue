@@ -1,5 +1,5 @@
 <script setup >
-import Comment from '~/components/Comment.vue';
+import Comments from '~/components/Comments.vue';
 const route = useRoute()
 console.log(route.params.id)
 const story = ref(null);
@@ -8,7 +8,7 @@ const comment = ref(null);
 onMounted(()=>{
     fetch(`https://hacker-news.firebaseio.com/v0/item/${route.params.id}.json?print=pretty`).then(res => res.json())
     .then(data => {story.value = data;return null;})
-    .then(data=>{console.log(story.value.url);domain.value=(story.value.url.toString().slice(0,20));console.log(domain.value);
+    .then(data=>{var url=new URL(story.value.url);domain.value=(url.hostname);
 
     console.log("succ");})
 })
@@ -17,13 +17,13 @@ onMounted(()=>{
     <Navbar></Navbar>
     <div id="Comments-root" v-if="story">
         <a class="title" :href="story.url"><h3>{{ story.title }}</h3></a>
-
-        <div id="time " class="container"><time class="item " :datetime="story.time">Publish Time:{{ story.time }}</time>
-            <a :href="story.url" class="item">{{ domain }}</a>
+        <div id="time " class="container">
+            <a :href="story.url" class="domain">www.{{ domain }}</a>
         </div>
+        <Time id="source-time" :time="story.time "></Time>
 
         <ul v-for="kid in story.kids">
-            <li><Comment :id="kid"></Comment>
+            <li><Comments :id="kid"></Comments>
                 <br/></li></ul>
             
     </div>
@@ -33,6 +33,12 @@ onMounted(()=>{
 </template>
 
 <style scoped>
+#source-time{
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    color: grey;
+    text-align: right;
+    margin-right: 200px;
+}
 .container{
     display: flex;
 }
@@ -51,10 +57,14 @@ onMounted(()=>{
 #container{
     display: flex;
 }
-.item{
+.domain{
     flex-basis: 200px;
     flex-grow: 1;
-    color:#f54e42;
+    color:orange;
+    margin-right:100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+        
 }
 .time{
     text-align: left;
@@ -62,8 +72,6 @@ onMounted(()=>{
 .container a{
     text-align:right ;
 
-}
-.comment{
 }
 .Comments-root{
     list-style-type: none;
