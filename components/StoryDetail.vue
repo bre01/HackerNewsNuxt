@@ -28,9 +28,11 @@ export default {
 <template>
     <div style="background-color: ; padding: 10px; border-style: solid;">
     <div v-if="story">
+        <div class="title">
         <a :href="story.url">
-            <h3>{{ story.title }}</h3>
+            <h3 id="title-this">{{ story.title }}</h3>
         </a>
+        </div>
         <NuxtLink :to="`/${id}`">
             <p>comment</p>
         </NuxtLink>
@@ -51,13 +53,17 @@ h3{
    color:black;
 }
 p{
-    font: Arial 15px , sans-serif;; 
+    font: Arial 15px , sans-serif;
    color:black;
 }
 
 .time{
     font:  arial 10px , sans-serif;; 
    color:black;
+}
+.title{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rebeccapurple;
 }
 
 </style>

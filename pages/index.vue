@@ -16,11 +16,13 @@
 </script>
 
 <template>
+<Navbar></Navbar>
 <div v-if="data">
     <AllStory :stories="data" />
 </div>
 </template>
 
 <style>
+/** { margin: 0 !important; }*/
 
 </style>
