@@ -13,6 +13,7 @@ onMounted(()=>{
 })
 </script>
 <template>
+    <base href="./">
     <Navbar></Navbar>
     <div id="Comments-root" v-if="story">
         <a class="title" :href="story.url"><h3>{{ story.title }}</h3></a>

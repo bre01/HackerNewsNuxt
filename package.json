@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "deploy":"nuxt generate && gh-pages --dotfiles -d .output/public"
+    "deploy": "nuxt generate && gh-pages --dotfiles -d .output/public"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "gh-pages": "^6.0.0",
+    "nuxt-app": "link:",
     "unix-timestamp": "^1.0.3"
   }
 }
