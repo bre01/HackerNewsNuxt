@@ -16,6 +16,8 @@
 </script>
 
 <template>
+<link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <Navbar></Navbar>
 <div v-if="data">
     <AllStory :stories="data" />
@@ -23,6 +25,6 @@
 </template>
 
 <style>
-/** { margin: 0 !important; }*/
+body{ margin-top: 0 !important; }
 
 </style>

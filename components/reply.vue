@@ -41,7 +41,8 @@ export default {
 <style scoped>
 .replay{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-color: aquamarine ;border-style:solid ;
+    border-color: rgb(241,243,244) ;border-style:solid ;
+    border-width: 1px;
     border-radius: 30px; 
     padding: 20px;
 }

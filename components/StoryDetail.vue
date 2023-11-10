@@ -26,28 +26,30 @@ export default {
 
 </script>
 <template>
-    <div style="background-color: ; padding: 10px; border-style: solid;">
     <div v-if="story">
         <div class="title">
-        <a :href="story.url">
-            <h3 id="title-this">{{ story.title }}</h3>
+        <a  :href="story.url">
+            {{ story.title }}
         </a>
         </div>
-        <NuxtLink :to="`/${id}`">
-            <p>comment</p>
-        </NuxtLink>
+        <div class="details">
+        <NuxtLink style="text-decoration: none;" :to="`/${id}`">
+            <p><span style="text-decoration: underline ;color:burlywood ;top:-2px">Comments</span  > &nbsp&nbsp&nbsp&nbsp313 Points</p></NuxtLink>
+            <p><span>{{ story.by}}&nbsp&nbsp&nbsp&nbsp&nbsp</span><span>{{ time }}</span></p>
 
-       <span class="time">published at: {{time}} by: </span> 
-        <span>{{ story.by }}</span>
+        
+        </div>
 
     </div>
     <div v-else>
         <h1>loading...</h1>
     </div>
     <br/>
-    </div>
 </template>
 <style scoped>
+.details{
+    font-family: 'Inter';
+}
 h3{
    font: Georgia 20px , sans-serif;; 
    color:black;
@@ -64,6 +66,12 @@ p{
 .title{
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: rebeccapurple;
+    font-style: italic;
+}
+.title a{
+    text-decoration: none;
+    font-size: 30px;
+    color:rgb(243, 148, 46)
 }
 
 </style>

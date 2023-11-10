@@ -42,8 +42,11 @@ export default {
 }
 </script>
 <template>
-    <div style="border-style: solid;border-color: greenyellow; padding: 10px; ">
-        <div v-html="comment"></div>
+    <link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <div class="comment">
+       <div id="comment-root">
+        <div class="comment-html" v-html="comment"></div>
         <div>{{ showTime.hour }} hours {{showTime.min }} ago </div>
         <button @click="toggle" :hidden="!kids.length">show {{kids.length}} replies</button>
         <br/>
@@ -54,9 +57,14 @@ export default {
                 <reply :id="kid"></reply>
             </li>
         </ol>
+        </div>
     </div>
 </template>
 <style scoped>
+#comment-root{
+    grid-column:1/5;
+    margin-left:40px;
+}
 .grid-container{
     display: grid;
     grid-template-columns: 1fr 1fr ;
@@ -67,4 +75,23 @@ export default {
 .no-number{
     list-style: none;
 }
+.comment{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+	border-bottom: 1px solid rgb(241,243,244);
+	padding-bottom: 16px;
+	overflow: hidden;
+}
+.comment-html{
+    font-family: "inter";
+}
+
+:root{
+--font: var(--font-sans);
+--font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantrell, "Open Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+--font-serif: 'Source Serif Pro', "Iowan Old Style", "Sitka Text", Palatino, "Book Antiqua", serif;
+--theme-colors: 255,102,0;
+--line-colors:rgb(241,243,244);
+}
+
 </style>
