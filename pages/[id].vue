@@ -1,5 +1,4 @@
 <script setup >
-import Comments from '~/components/Comments.vue';
 const route = useRoute()
 console.log(route.params.id)
 const story = ref(null);

@@ -7,7 +7,7 @@ export default {
         return {
             comment: null,
             kids: [],
-            showReply: false,
+            showReply: true,
             time: null,
             user:null,
             
