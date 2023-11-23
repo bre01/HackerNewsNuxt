@@ -1,44 +1,41 @@
-<script setup>
+<script lang="ts" setup>
 //import Comments from '~/components/Comments.vue';
+export interface Story {
+  title: string;
+  url: string;
+  time: number;
+  kids: number[];
+  score: number;
+  descendents: number;
+}
 const route = useRoute();
 console.log(route.params.id);
-const story = ref(null);
 const domain = ref(null);
 const comment = ref(null);
-onMounted(() => {
-  fetch(
-    `https://hacker-news.firebaseio.com/v0/item/${route.params.id}.json?print=pretty`
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      story.value = data;
-      return null;
-    })
-    .then((data) => {
-      var url = new URL(story.value.url);
-      domain.value = url.hostname;
+const story = ref();
+fetch(
+  `https://hacker-news.firebaseio.com/v0/item/${route.params.id}.json?print=pretty`
+)
+  .then((res) => res.json())
+  .then((data: Story) => {
+    story.value = data;
+  })
+  .catch((error) => console.log(error))
+  .finally(() => console.log("finally"));
 
-      console.log("succ");
-    });
+
+
+
+
+onMounted(() => {
+
 });
 </script>
 <template>
-  <Navbar/>
+  <Navbar />
   <div id="Comments-root" v-if="story">
-    <a class="title" :href="story.url">
-      <h3>{{ story.title }}</h3>
-    </a>
-    <div id="time " class="container">
-      <a :href="story.url" class="domain">www.{{ domain }}</a>
-    </div>
-    <Time id="source-time" :time="story.time"></Time>
+    <ArticleInfoV1 :story="story"></ArticleInfoV1>
 
-    <ul v-for="kid in story.kids">
-      <li>
-        <Comments :id="kid"></Comments>
-        <br />
-      </li>
-    </ul>
     <CommentsV1 :commentIds="story.kids"></CommentsV1>
   </div>
   <div v-else>
