@@ -19,6 +19,8 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@nuxtjs/tailwindcss": "^6.10.1",
+    "daisyui": "^4.4.6",
     "gh-pages": "^6.0.0",
     "nuxt-app": "link:",
     "unix-timestamp": "^1.0.3"
