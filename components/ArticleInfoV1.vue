@@ -8,8 +8,7 @@
     <Time id="source-time" :time="story.time"></Time>
 </template>
 <script lang="ts" setup>
-import { type Story} from "../pages/[id].vue"
-
+import type Story from "../Interfaces/Story.ts";
 const props=defineProps({
     story:{
         type:Object as PropType<Story>,

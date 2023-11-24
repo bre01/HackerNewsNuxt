@@ -1,13 +1,5 @@
 <script lang="ts" setup>
-//import Comments from '~/components/Comments.vue';
-export interface Story {
-  title: string;
-  url: string;
-  time: number;
-  kids: number[];
-  score: number;
-  descendents: number;
-}
+import type Story from "../Interfaces/Story.ts";
 const route = useRoute();
 console.log(route.params.id);
 const domain = ref(null);
@@ -32,15 +24,16 @@ onMounted(() => {
 });
 </script>
 <template>
+  <Theme>
   <Navbar />
-  <div id="Comments-root" v-if="story">
+  <div  v-if="story">
     <ArticleInfoV1 :story="story"></ArticleInfoV1>
-
     <CommentsV1 :commentIds="story.kids"></CommentsV1>
   </div>
   <div v-else>
     <h1>loading...</h1>
   </div>
+  </Theme>  
 </template>
 
 <style scoped>

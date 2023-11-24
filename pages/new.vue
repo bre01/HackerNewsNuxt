@@ -7,7 +7,7 @@
             }
         },
         mounted(){
-            fetch("https://hacker-news.firebaseio.com/v0/beststories.json?print=pretty").then(data=>data.json()).then(json=>this.data=json)
+            fetch("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty").then(data=>data.json()).then(json=>this.data=json)
 
         }
 
