@@ -2,11 +2,11 @@
 import type Comment from "../Interfaces/Comment.ts";
 import timestamp from "unix-timestamp";
 const props = defineProps({
-  id: Number,
+  commentId: Number,
 });
 const comment = ref();
 fetch(
-  `https://hacker-news.firebaseio.com/v0/item/${props.id}.json?print=pretty`
+  `https://hacker-news.firebaseio.com/v0/item/${props.commentId}.json?print=pretty`
 )
   .then((res) => res.json())
   .then((data: Comment) => {
@@ -62,7 +62,7 @@ const showTime = computed(() => {
     </div>
     <div v-if=" comment.kids" v-show="showReply">
       <div v-for="kid in comment.kids">
-        <CommentV1 :id="kid" />
+        <CommentV1 :commentId="kid" />
       </div>
     </div>
   </div>
@@ -97,10 +97,12 @@ const showTime = computed(() => {
     -->
 </template>
 <style scoped>
-.comment{
+/*
+.innerComment{
   margin:20px;
   padding-bottom: 3px;
   border-top: 1px solid rgb(201,203,204);
   padding-top:8px;
 }
+*/
 </style>
