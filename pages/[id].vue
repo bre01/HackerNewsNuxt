@@ -24,43 +24,54 @@ onMounted(() => {
 });
 </script>
 <template>
-  <Theme>
-  <Navbar />
-  <div  v-if="story">
-    <ArticleInfoV1 :story="story"></ArticleInfoV1>
-    <CommentsV1 :commentIds="story.kids"></CommentsV1>
-  </div>
-  <div v-else>
-    <h1>loading...</h1>
-  </div>
-  </Theme>  
+    <Navbar />
+    
+    <div class="main" v-if="story">
+      <ArticleInfoV1 :story="story"></ArticleInfoV1>
+      <CommentsV1 :commentIds="story.kids"></CommentsV1>
+    </div>
+    <div v-else>
+      <h1>loading...</h1>
+    </div>
 </template>
 
-<style scoped>
+<!-- <style scoped>
+/*
 #source-time {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: grey;
   text-align: right;
   margin-right: 200px;
-}
+}*/
+
+/*
+.main {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.85);
+  background-color: #f9f9f9;
+  margin: 8px;
+
+}*/
 
 .container {
   display: flex;
 }
 
-.title {
+/* .title {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: rebeccapurple;
   text-align: center;
   font-size: 30px;
   padding: 20px;
-}
+} */
 
+/*
 #time {
   font-family: Georgia, "Times New Roman", Times, serif;
   text-align: right;
   color: grey;
-}
+}*/
 
 #container {
   display: flex;
@@ -89,5 +100,4 @@ onMounted(() => {
 
 ul {
   list-style-type: none;
-}
-</style>
+}</style> -->

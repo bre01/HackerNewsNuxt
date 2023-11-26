@@ -8,16 +8,15 @@
 <template>
     <nav id="navbar">
         <ul >
-           <NuxtLink to="/"><li>HackerNuxt</li> </NuxtLink>
+           <NuxtLink to="http://www.github.com/bre01/HackerNewsNuxt"><li>HackerNuxt</li> </NuxtLink>
            <NuxtLink to="/New"><li>New</li> </NuxtLink>
-           <NuxtLink to="/ask"><li>Ask Hackers</li></NuxtLink>
             <NuxtLink to="/"><li>Best</li></NuxtLink>
-            <NuxtLink to="show"><li>Show Hackers</li></NuxtLink>
         </ul>
     </nav> 
 </template>
 <style scoped>
 #navbar{
+    z-index: 100;
     font-size:20px;
     font-family:'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantrell, "Open Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     position: sticky;
@@ -42,7 +41,6 @@
 }
 #navbar a{
     text-decoration: none; 
-
 }
 ul{
    display: flex;   

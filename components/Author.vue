@@ -1,9 +1,7 @@
 <template>
-  <h3 class="text-lg">
       <NuxtLink :to="`user/${author}`">
-    <span class="badge badge-md">{{ author }}</span>
-    </NuxtLink>
-  </h3>
+    <div class="comment-author">{{ author }}</div>
+      </NuxtLink>
 </template>
 <script lang="ts" setup>
 const props = defineProps({
@@ -11,8 +9,4 @@ const props = defineProps({
 });
 </script>
 <style scoped>
-h3{
-    display: inline;
-    margin-left:120px;
-}
 </style>
